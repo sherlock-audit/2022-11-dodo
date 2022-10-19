@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # DODO contest details
 
 - 10,000 USDC main award pot
@@ -30,7 +29,6 @@ TBD
 # About DODO
 
 TBD
-=======
 # Template
 
 Template using Foundry && HardHat architecture.
@@ -164,4 +162,3 @@ remapping:
 
 import:
 `import "@openzeppelin/contracts/token/ERC20/ERC20.sol";`
->>>>>>> 014c517 (init)
