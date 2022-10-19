@@ -30,8 +30,12 @@ TBD
 
 TBD
 # Template
+Main Contract: ./contracts/SmartRoute/DODORouteProxy.sol
 
-Template using Foundry && HardHat architecture.
+DODORouteProxy is a new routeProxy contract with fee rebate to manage all route. It provides three methods to swap, including mixSwap,multiSwap and externalSwap. Mixswap is for linear swap, which describes one token path with one pool each time. Multiswap is a simplified version about 1inch, which describes one token path with several pools each time. ExternalSwap is for other routers like 0x, 1inch and paraswap. Dodo and front-end users could take certain route fee rebate from each swap. Wherein dodo will get a fixed percentage, and front-end users could assign any proportion through function parameters. 
+
+
+Inheritaged a template using Foundry && HardHat architecture.
 
 ## Motivation
 
