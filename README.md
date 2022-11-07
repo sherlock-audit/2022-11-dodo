@@ -17,25 +17,27 @@
 TO FILL IN BY PROTOCOL
 
 ```
-DEPLOYMENT: [e.g. mainnet, arbitrum, optimism, ..]
-ERC20: [e.g. any, none, USDC, USDC and USDT]
-ERC721: [e.g. any, none, UNI-V3]
+DEPLOYMENT: mainnet, arbitrum, optimism, ..
+ERC20: any
+ERC721: none
 ```
 
 # Audit scope
 
-TBD
+The following contracts in the DODOEX/dodo-route-contract repo are in scope.
+
+- /SmartRoute/DODORouteProxy.sol
 
 # About DODO
 
-TBD
-# Template
-Main Contract: ./contracts/SmartRoute/DODORouteProxy.sol
+DODO is a decentralized exchange platform powered by the Proactive Market Maker (PMM) algorithm. It features highly capital-efficient liquidity pools that support single-token provision, reduce impermanent loss, and minimize slippage for traders. The trading platform also offers SmartTrade, a decentralized liquidity aggregation service that routes to and compares various liquidity sources to quote the optimal swap rate between any two tokens.
 
 DODORouteProxy is a new routeProxy contract with fee rebate to manage all route. It provides three methods to swap, including mixSwap,multiSwap and externalSwap. Mixswap is for linear swap, which describes one token path with one pool each time. Multiswap is a simplified version about 1inch, which describes one token path with several pools each time. ExternalSwap is for other routers like 0x, 1inch and paraswap. Dodo and front-end users could take certain route fee rebate from each swap. Wherein dodo will get a fixed percentage, and front-end users could assign any proportion through function parameters. 
 
+# Test
 
 Inheritaged a template using Foundry && HardHat architecture.
+All tests base on hardhat.
 
 ## Motivation
 
@@ -46,23 +48,6 @@ With this new architecture, we can get:
 - Integration testing with Hardhat
 - Hardhat deploy & verify
 - Typescript
-
-### Foundry
-
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum
-application development written in Rust.**
-
-Foundry consists of:
-
-- [**Forge**](./forge): Ethereum testing framework (like Truffle, Hardhat and
-  Dapptools).
-- [**Cast**](./cast): Swiss army knife for interacting with EVM smart contracts,
-  sending transactions and getting chain data.
-
-**Need help getting started with Foundry? Read the [📖 Foundry
-Book][foundry-book] (WIP)!**
-
-[foundry-book]: https://onbjerg.github.io/foundry-book/
 
 ### Hardhat
 
@@ -97,28 +82,6 @@ slither.config.json - "Configure slither"
 
 ## Installation
 
-### Foundry
-
-First run the command below to get `foundryup`, the Foundry toolchain installer:
-
-```sh
-curl -L https://foundry.paradigm.xyz | bash
-```
-
-If you do not want to use the redirect, feel free to manually download the
-foundryup installation script from
-[here](https://raw.githubusercontent.com/gakonst/foundry/master/foundryup/install).
-
-Then, in a new terminal session or after reloading your `PATH`, run it to get
-the latest `forge` and `cast` binaries:
-
-```sh
-foundryup
-```
-
-Advanced ways to use `foundryup`, and other documentation, can be found in the
-[foundryup package](./foundryup/README.md). Happy forging!
-
 ### Hardhat
 
 `npm install` or `yarn`
@@ -145,24 +108,9 @@ Hardhat Commands
   coverage
     yarn coverage
 ```
-```sh
-Foundry Commands
-  unit tests
-    forge test
-  coverage
-    forge coverage
-```
+
 ## Adding dependency
 
 Prefer `npm` packages when available and update the remappings.
 
-### Example
 
-install:
-`yarn add -D @openzeppelin/contracts`
-
-remapping:
-`@openzeppelin/contracts=node_modules/@openzeppelin/contracts`
-
-import:
-`import "@openzeppelin/contracts/token/ERC20/ERC20.sol";`
