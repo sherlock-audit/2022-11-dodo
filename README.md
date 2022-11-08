@@ -14,8 +14,6 @@
 
 # On-chain context
 
-TO FILL IN BY PROTOCOL
-
 ```
 DEPLOYMENT: mainnet, arbitrum, optimism, ..
 ERC20: any
