@@ -25,6 +25,12 @@ ERC721: none
 The following contracts in the DODOEX/dodo-route-contract repo are in scope.
 
 - /SmartRoute/DODORouteProxy.sol
+- DODOApprove.sol
+- DODOApproveProxy.sol
+- IDODOApprove.sol
+- lib/DecimalMath.sol
+- lib/UniversalERC20.sol
+
 
 # About DODO
 
